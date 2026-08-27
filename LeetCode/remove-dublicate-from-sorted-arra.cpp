@@ -7,11 +7,25 @@ using namespace std;
 
 
 
+// int removeDuplicates(vector<int>& nums) {
+//     set <int> st;
+//     int k = 0;
+//     for(auto it = nums.begin(); it != nums.end(); it++) {
+//         st.insert(*(it));
+//     }
+//     for(auto i : st) {
+//         nums[k] = i;
+//         k++;
+//     }
+//     return k;
+// }
+
+
+
  void removeDuplicates(vector<int>& nums) {
 
         int i = 0;
         int j = i+1;
-        int t;
 
     while (j  < nums.size()) {
 

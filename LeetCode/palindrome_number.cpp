@@ -26,15 +26,3 @@ int main() {
     return 0;
 }
 
-// int removeDuplicates(vector<int>& nums) {
-//     set <int> st;
-//     int k = 0;
-//     for(auto it = nums.begin(); it != nums.end(); it++) {
-//         st.insert(*(it));
-//     }
-//     for(auto i : st) {
-//         nums[k] = i;
-//         k++;
-//     }
-//     return k;
-// }
