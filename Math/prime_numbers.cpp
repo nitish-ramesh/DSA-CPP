@@ -30,7 +30,7 @@ void better(int n) {
         }
     }
     if (cnt == 2)cout << "prime number";
-    cout << "no bro";
+    else cout << "no bro";
 }
 
 int main() {
