@@ -24,7 +24,7 @@ int i = 2;
 }
 
 int main() {
-    cout << thatfuncion(54, 1000, 9999, 2);
+    cout << thatfuncion(12, 1, 20, 2);
 
     return 0;
 }
