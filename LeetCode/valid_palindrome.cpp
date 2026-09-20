@@ -4,7 +4,9 @@
 #include <iostream>
 using namespace  std;
 
-void helper(string s, int& i, int& j) {
+void helper(const string& s, int& i, int& j) { //const string& s => se ab direct
+    //org se check krega toh tc thoda btter hoga,
+    // string s => me har recursive call me s copy hoga, jisse thoda slow ho jayega code
     if (isalnum(s[i]) && isalnum(s[j]))
         return;
     if (i >= j)
