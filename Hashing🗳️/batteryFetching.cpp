@@ -6,12 +6,19 @@
 #include <vector>
 using namespace std;
 
-int bettryFetching(vector<pair<int, int>> drones) {
+int batteryFetching(vector<pair<int, int>> drones, int id) {
 
     unordered_map<int, int> droneHash;
     for (int i = 0; i < drones.size(); i++) {
-        
+        droneHash[drones[i].first] = drones[i].second;
     }
+
+    if (droneHash.find(id) != droneHash.end()) {
+        return droneHash[id];
+    }
+
+    return -1;
+
 
 }
 
@@ -26,5 +33,7 @@ int main() {
         {421, 31},
         {509, 67}
   };
+
+    cout << batteryFetching(drones, 315) << "%";
 
 }
