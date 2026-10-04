@@ -6,10 +6,11 @@ using namespace std;
 
 char findTheDifference(string s, string t) {
     char ans = 0;
-    for(int i = 0; i <= s.size(); i++) {
-        ans = ans ^ s[i] ^ t[i]; // here s.size pe koi element nhi h
-        //but c++ wahan ka garbage value utha rahi aur usko ^ me dal rahi h
+    for(int i = 0; i < s.size(); i++) { // if i <= s.size pe koi element nhi h
+        //but c++ wahan ka garbage value utha  legi and usko ^ me dal degi
+        ans = ans ^ s[i] ^ t[i];
     }
+    ans = ans ^ t.back();
     return ans;
 }
 
