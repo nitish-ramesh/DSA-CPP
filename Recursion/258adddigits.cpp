@@ -40,18 +40,29 @@ int addDigits(int n) {
   int sd = n % 10;
   sum += sd;
   n/= 10;
+
  }
  return addDigits(sum);
 
 }
 
-int optimalsoln(int n) {
- return 1 + (n - 1) % 9; // if n % 9 then 9's factor number recevie 0 like 18 if we fo 18%9 = 0
- //so why this
+// int optimalsoln(int n) {
+//  return 1 + (n - 1) % 9;
+// }
+// if n % 9 then 9's factor number recevie 0 like 18 if we fo 18%9 = 0
+//so why this
+
+
+int bypureRecursion(int n) {
+ if (n < 10) return n;
+ int sum =  n % 10 + bypureRecursion(n/10);
+ return bypureRecursion(sum);
 }
 
 int main () {
-cout << addDigits(58);
+// cout << addDigits(58);
  cout << endl;
- cout << optimalsoln(58);
+ // cout << optimalsoln(58);
+
+ cout << bypureRecursion(58);
 }
