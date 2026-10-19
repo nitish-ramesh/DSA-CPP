@@ -37,6 +37,24 @@ void OptmizeBubbleSort(vector<int>& v) {
     }
 }
 
+void bubbleSortbyrecursion(vector<int>& v, int k) {
+
+    if (k >= v.size()-1) return;
+
+    int swap = 0;
+    for (int i = 0; i < v.size()-1; i++) {
+        if (v[i] > v[i+1]) {
+            int t = v[i+1];
+            v[i+1] = v[i];
+            v[i] = t;
+            swap++;
+        }
+    }
+    if (swap == 0) return;
+
+    bubbleSortbyrecursion(v, k+1);
+}
+
 int main() {
 
     vector<int> v = {1,2,3,4,5};

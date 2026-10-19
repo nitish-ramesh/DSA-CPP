@@ -28,29 +28,40 @@ using namespace std;
 // }
 
 
-void fn(vector<int>& v, int k) {
+// void fn(vector<int>& v, int k) {
+//
+//     if (k >= v.size()-1) return;
+//
+//     int swap = 0;
+//     for (int i = 0; i < v.size()-1; i++) {
+//         if (v[i] > v[i+1]) {
+//             int t = v[i+1];
+//             v[i+1] = v[i];
+//             v[i] = t;
+//             swap++;
+//         }
+//     }
+//     if (swap == 0) return;
+//
+//     fn(v, k+1);
+// }
 
-    if (k >= v.size()-1) return;
 
-    int swap = 0;
-    for (int i = 0; i < v.size()-1; i++) {
-        if (v[i] > v[i+1]) {
-            int t = v[i+1];
-            v[i+1] = v[i];
-            v[i] = t;
-            swap++;
-        }
-    }
-    if (swap == 0) return;
+// stl practice:->
 
-    fn(v, k+1);
-}
+
+
+
 
 int main() {
 
-    vector<int> v = {4, 1, 3, 2, 5, 9 , 2};
-    fn(v, 0);
+    // vector<pair<int, char>> v = {{1, 'a'}, {2, 'b'}};
+    // for (auto x: v) cout << x.first << " " << x.second<< " ";
 
-    for (int x : v) cout << x << " " ;
+    vector<int> v = {2,1,4,3};
 
+    vector<int> :: iterator it = v.begin();
+
+
+    for (int x : v) cout << *it << " " << endl;
 }
