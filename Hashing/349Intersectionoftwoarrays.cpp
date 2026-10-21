@@ -48,7 +48,7 @@ vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
 }
 
 
-// this algo pass all the test cases
+// this algo pass all the test cases tc O(mn)
 vector<int> intersection2(vector<int>& nums1, vector<int>& nums2) {
     unordered_set<int> s;
     for(int i = 0; i < nums1.size(); i++) {
@@ -64,9 +64,23 @@ vector<int> intersection2(vector<int>& nums1, vector<int>& nums2) {
 
 }
 
+//optimal soln tc O(m + n)
+vector<int> intersection3(vector<int>& nums1, vector<int>& nums2) {
+    unordered_set<int> s(nums1.begin(), nums1.end());// removes dublicate form nums1
+    vector<int> ans;
+
+    for (int x : nums1) {
+        if (s.find(x) != s.end()) {
+            ans.push_back(x);
+            s.erase(x);
+        }
+    }
+    return ans;
+}
+
 int main () {
     vector<int> nums1 = {1,2,2,1};
-    vector<int> nums2 = {3,4};
-    vector<int> ans = intersection2(nums1, nums2);
+    vector<int> nums2 = {2,1};
+    vector<int> ans = intersection3(nums1, nums2);
     for (int x : ans) cout << x << " ";
 }
